@@ -1,0 +1,59 @@
+<div class="card border-success mb-3">
+  <div class="card-body text-success">
+    	<table class="table table-condensed">
+		<thead class="bg-success" style="font-variant: small-caps;">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Mô tả</th>
+				<th>Nội dung</th>
+				<th>Image</th>
+				<th>giá</th>
+				<th>Loại</th>
+				<th>Mã sản phẩm</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in pager.items">
+				<td>{{item.id}}</td>
+				<td>{{item.tensp}}</td>
+				<td>{{item.mota}}</td>
+				<td>{{item.noidung}}</td>
+				<td>{{item.hinh}}</td>
+				<td>{{item.gia}}</td>
+				<td>{{item.loai.ten}}</td>
+				<td>{{item.masp}}</td>
+				<td>
+					<div class="btn-group btn-group-xs">
+						<a ng-click="edit(item)" href="" class="btn btn-warning">
+							<i class="bi bi-pencil-square"></i>
+						</a>
+						<a ng-click="delete(item)" href=""  class="btn btn-danger">
+							<i class="bi bi-trash3"></i>
+						</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+    </div>
+  <div class="card-footer bg-transparent border-success">
+<div class="panel-footer text-center">
+		<button ng-click="pager.first()" class="btn btn-danger">
+			<i class="bi bi-caret-left-square"></i>
+		</button>
+		<button ng-click="pager.prev()" class="btn btn-primary">
+			<i class="bi bi-caret-left-fill"></i>
+		</button>
+		<button class="btn btn-success">
+			{{pager.page + 1}} of {{pager.count}}
+		</button>
+		<button ng-click="pager.next()" class="btn btn-primary">
+			<i class="bi bi-caret-right-fill"></i>
+		</button>
+		<button ng-click="pager.last()" class="btn btn-danger">
+			<i class="bi bi-caret-right-square"></i>
+		</button>
+	</div></div>
+</div>

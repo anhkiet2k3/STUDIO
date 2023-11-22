@@ -1,0 +1,35 @@
+
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+    <main style="margin-top: 150px">
+    <!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-12">
+					<div class="login_form_inner">
+						<h3>Quên mật khẩu</h3>
+						<form class="row login_form" action="forgot-password" method="post">
+							<div class="col-md-12 form-group">
+								<input class="form-control" type="text" id="varify" name="username" onfocus="this.placeholder = 'Tài Khoản'" placeholder="UserName" >
+							</div>
+							<div class="col-md-12 form-group">
+								<input class="form-control" type="email" id="email" name="email" placeholder="Email" onfocus="this.placeholder = 'Email'" >
+							</div>
+							
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="button button-login w-100">Send</button>
+								
+							</div>
+						</form>
+						
+						<a th:href="@{/taikhoan/login}" >Quay lại  đăng nhập</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+    </main>
+</html>
